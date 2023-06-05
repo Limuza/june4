@@ -1,0 +1,108 @@
+@use "./partials/variables" as *;
+@use "./partials/mixins" as *;
+
+$breakpoint-mobile: 576px;     // Width for mobile devices
+$breakpoint-tablet: 768px;     // Width for tablet devices
+@media screen and (min-width: 768px) {
+  .header {
+    flex-direction: row;
+  }
+}
+
+$breakpoint-desktop: 992px; 
+@media screen and (min-width: 992px) {
+  .header__logo {
+    font-size: 4rem;
+  }
+}
+
+$font-stack: Avenir, sans-serif;
+$primary-color: #ffffff;
+$secondary-color:#323232;
+$tertiary-color: #afafafaf;
+
+
+font-face {
+  font-family: "AvenirNextLTPro";
+  src: url("../assets/Font/AvenirNextLTPro-Bold.otf") format("otf"), url("../assets/Font/AvenirNextLTPro-Demi.otf") format("otf"), url("../assets/Font/AvenirNextLTPro-Regular.otf") format("otf")
+}
+
+body {
+  font-style: "AvenirNextLTPro", sans-serif;
+
+}
+
+nav {
+  background-color: $primary-color;
+
+}
+
+.box{
+  margin-block: 30px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  background-color: $secondary-color;
+  padding: 0 16px;
+  text-align: center;
+}
+ 
+&__row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+
+&__coloumn {
+ flex: 1;
+ justify-content: center;
+ display: flex;
+}
+
+h2 {
+  font-size: 14px;
+  font-family: cursive;
+}
+
+
+li {
+  font-weight: bold;
+}
+
+&__title {
+  font-size: 60px;
+  line-height: 68px;
+  font-weight: 700;
+  color: $white;
+  display: flex;
+  align-items: center;
+}
+
+&__hero {
+  text-align: center;
+  padding: 24px;
+
+  img {
+    max-width: 100%
+  }
+
+  @include tablet {
+    flex-direction: row;
+  }
+
+  &__logo {
+    font-size: 2rem;
+
+    @include tablet {
+      font-size: 3rem;
+    }
+    @include desktop {
+      font-size: 4rem;
+    }
+  }
+}
+
+
